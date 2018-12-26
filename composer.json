@@ -1,0 +1,18 @@
+{
+  "name": "xingzhilong/user-client",
+  "license": "MIT",
+  "require": {
+    "grpc/grpc": "v1.9.0",
+    "google/protobuf": "^v3.3.0"
+  },
+  "autoload": {
+    "files": [
+      "src/config/app.php"
+    ],
+    "psr-4": {
+      "User\\": "./src/User",
+      "GPBMetadata\\": "./src/GPBMetadata",
+      "GClient\\": "./src"
+    }
+  }
+}
