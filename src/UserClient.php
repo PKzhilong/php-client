@@ -41,11 +41,10 @@ class UserClient
         return self::$userClient;
     }
 
-    public function getStudentByID($studentID): Student
+    public function getStudentByID($studentID)
     {
         $request = new RequestStudent();
         $request->setStudentId($studentID);
-
         /**
          * @var $reply Student
          * @var $status \stdClass
@@ -54,9 +53,6 @@ class UserClient
         if ($status->code != 0) {
             return null;
         }
-        $address = getenv('PATH');
-        print_r($address);  echo '\n';
-        print_r('-----------');
         return $reply;
     }
 }
