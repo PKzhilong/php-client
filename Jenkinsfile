@@ -1,12 +1,12 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {node ""}
+    agent any
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo '测试嗲吗'
             }
         }
         stage('Test') {
