@@ -5,7 +5,7 @@ pipeline {
 
     stages {
         stage('Clean up') {
-            stages {
+            steps {
                 echo '清理以构建的镜像'
                 sh 'docker image rm hasichenglouzhu/php-client'
             }
