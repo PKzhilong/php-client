@@ -13,9 +13,14 @@ pipeline {
     }
 
     post {
+        
+        always {
+           echo '清理以构建的镜像'
+           sh 'docker image rm haichenglouzhu/php-client'
+        }
         success {
-             echo '推送镜像'
-             sh 'docker push haichenglouzhu/php-client'
+           echo '推送镜像'
+           sh 'docker push haichenglouzhu/php-client'
         }
     }
 }
