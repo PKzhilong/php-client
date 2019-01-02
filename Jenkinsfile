@@ -10,11 +10,12 @@ pipeline {
                 sh 'docker build -t haichenglouzhu/php-client:latest ./'
             }
         }
-        stage('Push images') {
-            steps {
-                echo '推送镜像'
-                sh 'docker push haichenglouzhu/php-client'
-            }
+    }
+
+    post {
+        success {
+             echo '推送镜像'
+             sh 'docker push haichenglouzhu/php-client'
         }
     }
 }
