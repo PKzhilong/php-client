@@ -4,6 +4,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean up') {
+            stages {
+                echo '清理以构建的镜像'
+                sh 'docker image rm hasichenglouzhu/php-client'
+            }
+        }
         stage('Build') {
             steps {
                 echo '开始制作镜像'
@@ -13,11 +19,6 @@ pipeline {
     }
 
     post {
-        
-        always {
-           echo '清理以构建的镜像'
-           sh 'docker image rm haichenglouzhu/php-client'
-        }
         success {
            echo '推送镜像'
            sh 'docker push haichenglouzhu/php-client'
