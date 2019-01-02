@@ -6,17 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo '测试嗲吗'
+                echo '开始制作镜像'
+                sh 'docker build -t haichenglouzhu/php-client:latest ./'
             }
         }
-        stage('Test') {
+        stage('Push images') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo '推送镜像'
+                sh 'docker push haichenglouzhu/php-client'
             }
         }
     }
