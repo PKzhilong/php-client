@@ -1,6 +1,7 @@
-Jenkinsfile (Declarative Pipeline)
+#!/usr/bin/env groovy
+
 pipeline {
-    agent any
+    agent {node ""}
 
     stages {
         stage('Build') {
