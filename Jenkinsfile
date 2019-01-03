@@ -21,7 +21,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                echo '部署代码上线'
+                echo '部署代码'
             }
         }
     }
