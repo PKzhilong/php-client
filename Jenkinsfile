@@ -19,6 +19,11 @@ pipeline {
                sh "${script_url}/push_image.sh"
             }
         }
+        stage('deploy') {
+            steps {
+                echo '部署代码'
+            }
+        }
     }
 
     post {
